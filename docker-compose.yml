@@ -3,6 +3,8 @@ version: '2'
 volumes:
     database_data:
         driver: local
+    ls_data:
+        driver: local
 
 services:
 ###########################
@@ -25,7 +27,7 @@ services:
         expose:
           - 9000
         volumes:
-          - ./dist:/var/www/html/limesurvey/upload
+          - ls_data:/var/www/html/limesurvey
 
 ###########################
 # Setup the MySql container
